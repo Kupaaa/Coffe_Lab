@@ -1,0 +1,59 @@
+/* Align an element to the right with a smooth transition effect */
+.float {
+    float: right;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Style Material Design Card with a shadow and padding */
+mat-card {
+    padding: 20px;
+    border-radius: 10px; /* Add rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    background-color: #ffffff; /* Set the background color to white */
+}
+
+/* Style a table to occupy the full width and add some spacing between cells */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Remove spacing between table cells */
+}
+
+/* Style table headers for better readability */
+table th {
+    background-color: #f5f5f5; /* Light gray background color */
+    font-weight: bold; /* Make the text bold */
+    padding: 8px; /* Add some padding */
+    text-align: left; /* Align text to the left */
+    border-bottom: 2px solid #e0e0e0; /* Add a bottom border */
+}
+
+/* Style table rows with alternating background colors for better differentiation */
+table tr:nth-child(even) {
+    background-color: #f9f9f9; /* Lighter gray for even rows */
+}
+
+/* Style table cells with padding and border */
+table td {
+    padding: 8px; /* Add some padding */
+    border-bottom: 1px solid #e0e0e0; /* Add a bottom border to separate rows */
+}
+
+/* Style for the title container with flex layout */
+.title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Style to remove default margin on title text */
+.title-text {
+    margin: 0;
+}
+
+
+/* CSS for card header, aligning the button to the right */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

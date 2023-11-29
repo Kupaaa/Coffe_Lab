@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Define a CSS style for the table */
+        table {
+            font-family: Arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        /* Define a CSS style for table cells (td and th) */
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Cafe Management System Header -->
+    <h3 style="text-align: center;">Cafe Management System</h3>
+    
+    <!-- Customer Information Table -->
+    <table>
+        <tr>
+            <th>Name : <%= name %></th> <!-- Display the customer's name -->
+            <th>Email : <%= email %></th> <!-- Display the customer's email -->
+        </tr>
+        <tr>
+            <th>Contact Number : <%= contactNumber %></th> <!-- Display the customer's contact number -->
+            <th>Payment Method : <%= paymentMethod %></th> <!-- Display the payment method used -->
+        </tr>
+    </table>
+    
+    <!-- Product Details Table -->
+    <h3>Product Details:</h3>
+    <table>
+        <tr>
+            <th>Name</th> <!-- Table column header for product name -->
+            <th>Category</th> <!-- Table column header for product category -->
+            <th>Quantity</th> <!-- Table column header for product quantity -->
+            <th>Price</th> <!-- Table column header for product price -->
+            <th>Sub Total (LKR)</th> <!-- Table column header for product subtotal -->
+        </tr>
+        <!-- Check if there are product details to display -->
+        <% if (productDetails.length > 0) { %>
+            <!-- Loop through each product in the productDetails array -->
+            <% productDetails.forEach(product => { %>
+                <tr>
+                    <td><%= product.name %></td> <!-- Display the product's name -->
+                    <td><%= product.category %></td> <!-- Display the product's category -->
+                    <td><%= product.quantity %></td> <!-- Display the product's quantity -->
+                    <td><%= product.price %></td> <!-- Display the product's price -->
+                    <td><%= product.total %></td> <!-- Display the product's total -->
+                </tr>
+            <% }); %>
+        <% } %>
+    </table>
+
+    <!-- Display the total amount -->
+    <h3>Total (LKR) :  <%= totalAmount %></h3>
+    
+    <!-- Thank you message -->
+    <h3>Thank you for visiting. Please visit again!!</h3>
+</body>
+</html>

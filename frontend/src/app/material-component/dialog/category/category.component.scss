@@ -1,0 +1,23 @@
+/* Styling for mat-toolbar element */
+.mat-toolbar {
+    /* Remove excess spacing around the toolbar */
+    margin: -24px;
+    /* Allow the toolbar to expand to fit the content */
+    width: auto;
+    /* Add a margin at the bottom of the toolbar */
+    margin-bottom: 10px;
+  }
+  
+  /* Styling for elements with the 'title-center' class */
+  .title-center {
+    /* Center the text within its container using flex properties */
+    flex: 1 1 auto;
+    text-align: center;
+  }
+  
+  /* Styling for mat-form-field elements */
+  mat-form-field {
+    /* Add padding to the mat-form-field elements */
+    padding: 5px;
+  }
+  

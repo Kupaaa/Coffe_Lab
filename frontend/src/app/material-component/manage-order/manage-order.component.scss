@@ -1,0 +1,31 @@
+/* Apply padding to all mat-form-field elements */
+mat-form-field {
+    padding: 5px;
+}
+
+/* Create a utility class for floating elements to the right */
+.float-right {
+    float: right;
+}
+
+/* Set the width of all tables to 100% */
+table {
+    width: 100%;
+}
+
+/* Add padding to the bottom of mat-card elements */
+mat-card {
+    padding-bottom: 30px !important;
+}
+
+
+/* my-component.component.css */
+.selected-products-card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    padding: 16px; /* Increase padding for better separation */
+  }
+  
+  .section-title {
+    margin-bottom: 8px; /* Adjust the margin as needed */
+  }
+

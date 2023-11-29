@@ -1,0 +1,50 @@
+<mat-card>
+    <b><span>Manage Order</span></b>
+</mat-card>
+<hr>
+
+<mat-card>
+    <mat-form-field appearance="fill" fxFlex>
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyFilter($event)" #input>
+    </mat-form-field>
+</mat-card>
+<hr>
+
+<div class="responsive_table">
+    <!-- Define a table with a Material data source -->
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef="let column">Name</th>
+            <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+        </ng-container>
+        <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef="let column">Email</th>
+            <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+        </ng-container>
+        <ng-container matColumnDef="contactNumber">
+            <th mat-header-cell *matHeaderCellDef="let column">Contact Number</th>
+            <td mat-cell *matCellDef="let element">{{ element.contactNumber }}</td>
+        </ng-container>
+        <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef="let column">Action</th>
+            <td mat-cell *matCellDef="let element" class="action-link">
+                <!-- Use a MatSlideToggle for activating or deactivating users -->
+                <mat-slide-toggle (change)="handleChangeAction($event.checked, element.id)"
+                    matTooltip="Activate or Deactivate user" [checked]="element.status"></mat-slide-toggle>
+                <!-- Delete button to trigger user deletion -->
+                <button
+                    mat-icon-button
+                    color="primary"
+                    matTooltip="Delete"
+                    (click)="handleDeleteUserAction(element)"
+                >
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </td>
+        </ng-container>
+        <!-- Define table rows and headers -->
+        <tr mat-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+</div>

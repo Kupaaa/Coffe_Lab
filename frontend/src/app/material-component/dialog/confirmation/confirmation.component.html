@@ -1,0 +1,28 @@
+<mat-dialog-content class="mat-typography">
+  <!-- Display a message asking for confirmation -->
+  <h5>Are you sure you want to {{ details.message }}?</h5>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <!-- Button to confirm the action and trigger 'handleChangeAction' method -->
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="handleChangeAction()"
+    (mouseenter)="handleMouseEnter()"
+    (mouseleave)="handleMouseLeave()"
+    [ngClass]="{'hovered': isMouseOverButtonYes}"
+  >
+    Yes
+  </button>
+  <!-- Button to close the dialog with a 'No' result -->
+  <button
+    mat-raised-button
+    color="primary"
+    (mouseenter)="handleMouseEnterNo()"
+    (mouseleave)="handleMouseLeaveNo()"
+    [ngClass]="{'hovered': isMouseOverButtonNo}"
+    mat-dialog-close
+  >
+    No
+  </button>
+</mat-dialog-actions>

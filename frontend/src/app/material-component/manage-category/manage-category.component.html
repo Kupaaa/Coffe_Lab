@@ -1,0 +1,64 @@
+<!-- Title Card -->
+<mat-card class="card-title">
+  <div class="title-container">
+    <b><span>Manage Category</span></b>
+    <!-- Button to Add Category -->
+    <button mat-flat-button color="primary" (click)="handleAddAction()">
+      Add Category
+    </button>
+  </div>
+</mat-card>
+<hr />
+
+<!-- Filter Input Card -->
+<mat-card class="filter-card">
+  <mat-form-field appearance="fill">
+    <mat-label>Filter</mat-label>
+    <!-- Input for Filtering -->
+    <input matInput (keyup)="applyFilter($event)" #input />
+  </mat-form-field>
+</mat-card>
+<hr />
+
+<!-- Responsive Table Container -->
+<div class="responsive_table">
+  <!-- Data Table -->
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- Column for 'Name' -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+    </ng-container>
+
+    <!-- Column for 'Edit' Action -->
+    <ng-container matColumnDef="edit">
+      <th mat-header-cell *matHeaderCellDef>Action</th>
+      <td mat-cell *matCellDef="let element" class="action-link">
+        <!-- Button to Edit -->
+        <button
+          mat-icon-button
+          color="primary"
+          matTooltip="Edit"
+          (click)="handleEditAction(element)"
+        >
+          <mat-icon>edit</mat-icon>
+        </button>
+        <!-- Button to Delete -->
+        <button
+          mat-icon-button
+          color="primary"
+          matTooltip="Delete"
+          (click)="handleDeleteAction(element)"
+        >
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <!-- Header Row -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+    <!-- Data Row -->
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>
+

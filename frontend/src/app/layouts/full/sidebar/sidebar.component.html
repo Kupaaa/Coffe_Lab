@@ -1,0 +1,21 @@
+<mat-nav-list appAccordion>
+    <!-- Iterating over menu items and creating a list of navigation items -->
+    <mat-list-item appAccordionLink
+                  *ngFor="let menuitem of menuItems.getMenuitems()"
+                  routerLinkActive="selected"
+                  [group]="menuitem.state">
+      <!-- Each navigation item is wrapped in a list item -->
+      <a appAccordionToggle
+         [routerLink]="['/cafe', menuitem.state]"
+         *ngIf="menuitem.role === '' || menuitem.role === tokenPayload.role">
+        <!-- Display an icon associated with the navigation item -->
+        <mat-icon>{{menuitem.icon}}</mat-icon>
+        <!-- Display the name or label of the navigation item -->
+        <span>{{menuitem.name}}</span>
+        <!-- Create a flexible space to push other content to the right -->
+        <span fxFlex></span>
+      </a>
+    </mat-list-item>
+  </mat-nav-list>
+  
+  
